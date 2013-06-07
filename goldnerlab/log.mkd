@@ -1,11 +1,20 @@
 ## 2013-06-07
  
  * Noticed that `sdl` dropped out
+   * `dmesg`
+        [ 2289.401292] end_request: I/O error, dev sdl, sector 223426111
+        [ 2289.401314] sd 7:3:0:0: [sdl]  Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+        [ 2289.401317] sd 7:3:0:0: [sdl]  Sense Key : Aborted Command [current] [descriptor]
+        [ 2289.401320] Descriptor sense data with sense descriptors (in hex):
+        [ 2289.401322]         72 0b 00 00 00 00 00 0c 00 0a 80 00 00 00 51 e0 
+        [ 2289.401329]         00 00 00 01 
+        [ 2289.401333] sd 7:3:0:0: [sdl]  Add. Sense: No additional sense information
+        [ 2289.401336] sd 7:3:0:0: [sdl] CDB: Write(10): 2a 00 0d 51 3a 3f 00 04 00 00
+        [ 2289.401342] end_request: I/O error, dev sdl, sector 223427135
+        [ 2289.401359] ata8: EH complete
+        [ 2289.401830] ata8.03: detaching (SCSI 7:3:0:0)
+
    * Not entiredly sure which drive this is, going to label all drives
-   * Samsung HD204UI (Serial #S2H7J1BZB14648)
-   * SMART claims drive looks healthy:
-     * No bad sectors
-     * Powered on for 2.2 years
  * Looking back at `sdb` again:
    * On for 3.3 years
    * 458 bad sectors
@@ -30,7 +39,7 @@
 
  * Power supply failure
 
-## -infinity + epsilon
+## Some time around 2011-09
 
  * Loss of btrfs data volume due to loose eSATA cable
  * Reformatted volume with more traditional `md` RAID and ext4
