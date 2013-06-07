@@ -1,0 +1,13 @@
+ * Network
+   * hostname: goggle.physics.umass.edu
+   * ip address: 128.119.50.205
+ * Software
+   * Ubuntu
+ * Hardware
+   * Asus P9X79 LE motherboard
+   * Corsair Vengeance LP 16GB DDR3 1600 SDRAM
+   * EVGA 04G-P4-2686-KR GeForce GTK680 4GB GPU
+   * Rosewill Blackhwak AX mid-tower case
+   * 4 Seagate Barracuda ST31000524AS 1TB 7200TPM drives
+   * Intel Core i7-3820 Sandy Bridge 3.6GHz LGA2011 quad-core processor
+   * SeaSonic M12II 620W power supply

@@ -35,6 +35,8 @@ smartctl
 
  * /dev/sdl
    * Spare in md0
+   * Western Digital WD20EZX 2TB
+   * Serial number: WD-WMC300850775
    * 2TB
    * In goldnerlab, fourth drive from top
    * Installed on 17 Apr 2013 during potential drive failure
