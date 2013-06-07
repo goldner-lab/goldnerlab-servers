@@ -1,3 +1,9 @@
-* Hostname: goldnerlab.physics.umass.edu
-* IP address: 128.119.56.93
+ * Network:
+   * Hostname: goldnerlab.physics.umass.edu
+   * IP address: 128.119.56.93
+
+ * Hardware:
+   * nVidia GTX480
+   * 18 GB RAM
+   * 16 cores (Intel Xeon 5500)
 

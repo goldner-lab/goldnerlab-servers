@@ -1,0 +1,50 @@
+## 2013-06-07
+ 
+ * Noticed that `sdl` dropped out
+   * Not entiredly sure which drive this is, going to label all drives
+   * Samsung HD204UI (Serial #S2H7J1BZB14648)
+   * SMART claims drive looks healthy:
+     * No bad sectors
+     * Powered on for 2.2 years
+ * Looking back at `sdb` again:
+   * On for 3.3 years
+   * 458 bad sectors
+
+## 2013-06-06
+
+ * AMBER 11 and 12 crashing, moving from nvidia driver version 
+   
+   
+## 2013-04-15 
+
+ * `sdb` crashed
+   * ST31000528AS (Serial #9VP3YFPT)
+ * Removed final data from old `lvm` volumes
+
+## 2011-11-13
+
+ * Power supply failure
+
+## -infinity + epsilon
+
+ * Loss of btrfs data volume due to loose eSATA cable
+ * Reformatted volume with more traditional `md` RAID and ext4
+
+## 2011-08-16
+
+ * Upgraded to Ubuntu 11.04
+
+## 2011-01-02
+
+ * Configuration of external 16 TB RAID array
+
+## 2010-02-16
+
+ * Ordered two Seagate Barracuda 7200.12 1TB drivers and new 700W PSU
+ * Installed internally
+
+## 2009-12
+
+ * Initial configuration running Ubuntu under VM and other craziness
+ * Does anyone remember when exactly this was?
+
