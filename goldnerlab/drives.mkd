@@ -1,0 +1,41 @@
+ledctl
+
+smartctl
+
+ * /dev/sda:
+   * mounted to /
+   * 160GB
+   * In goldnerlab, top drive
+   * Installed during initial installation
+ 
+ * /dev/sdb:
+   * LVM
+   * 1TB
+   * In goldnerlab, second drive from top
+   * Installed during initial installation
+
+ * /dev/sdc
+   * LVM
+   * 1TB
+   * In goldnerlab, third drive from top
+   * Installed during initial installation
+
+ * /dev/sdd - /dev/sdk
+   * md0 constituents
+   * 2TB
+   * Serial numbers:
+     * /dev/sdd: S2H7JD2ZB07520
+     * /dev/sde: S2H7JD2ZB07815
+     * /dev/sdf: S2H7JD2ZB07511
+     * /dev/sdg: S2H7JD2ZB07806
+     * /dev/sdh: S2H7JD2ZB07509
+     * /dev/sdi: S2H7JD2ZB07648
+     * /dev/sdj: S2H7JD2ZB14653
+   * Installed with array
+
+ * /dev/sdl
+   * Spare in md0
+   * 2TB
+   * In goldnerlab, fourth drive from top
+   * Installed on 17 Apr 2013 during potential drive failure
+
