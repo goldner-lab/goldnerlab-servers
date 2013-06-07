@@ -22,7 +22,7 @@ smartctl
 
  * /dev/sdd - /dev/sdk
    * md0 constituents
-   * 2TB
+   * 8x 2TB 5400RPM Samsung HD204UI
    * Serial numbers:
      * /dev/sdd: S2H7JD2ZB07520
      * /dev/sde: S2H7JD2ZB07815
@@ -31,7 +31,7 @@ smartctl
      * /dev/sdh: S2H7JD2ZB07509
      * /dev/sdi: S2H7JD2ZB07648
      * /dev/sdj: S2H7JD2ZB14653
-   * Installed with array
+   * Installed with array 2011-01
 
  * /dev/sdl
    * Spare in md0
