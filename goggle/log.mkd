@@ -1,9 +1,25 @@
-# 2013-06-07
+## 2013-06-07
 
  * Upgraded to Ubuntu 13.04
+ * Now using nvidia toolkit from `nvidia-cuda-toolkit` package
+ * `CUDA_HOME=/usr/lib/nvidia-cuda-toolkit`
+ * To recompile amber, had to run
+     
+       $ sudo ln -s /usr/lib/x86_64-linux-gnu/libgfortran.so.3 /usr/lib/x86_64-linux-gnu/libgfortran.so
 
-# 2013-03-11
+ * Was also bitten by [this](http://stackoverflow.com/questions/9934549/very-strange-linker-behavior)
+   while building `pmemd.cuda`
+   * This is apparently due `libstdc++.so` being omitted from the link command line
+   * Worked around by adding,
+   
+        PMEMD_CU_LIBS += /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+     before `pmemd.cuda$(SFX)` rule in `src/pmemd/src/Makefile`
+ * All tests passed
+
+## 2013-03-11
 
  * System installed
  * Installed CUDA 5.0 and Amber 12
+ * Forced use of gcc 4.6 in amber build
 
