@@ -12,8 +12,9 @@
 
 ## 2013-06-06
 
- * AMBER 11 and 12 crashing, moving from nvidia driver version 
-   
+ * AMBER 11 and 12 crashing with a variety of unspecified kernel launch
+   failures, moving from nvidia driver version 319.23 to 4.304.54 appears to
+   fix, also moved to Amber 12
    
 ## 2013-04-15 
 
