@@ -1,5 +1,9 @@
+# 2013-06-07
+
+ * Upgraded to Ubuntu 13.04
+
 # 2013-03-11
 
  * System installed
-
+ * Installed CUDA 5.0 and Amber 12
 

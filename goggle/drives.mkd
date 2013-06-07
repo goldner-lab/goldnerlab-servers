@@ -1,0 +1,6 @@
+
+ * /dev/sda
+   * mounted to /
+   * Seagate Barracuda ST31000524AS
+   * 1TB 7200TPM
+   * Serial #

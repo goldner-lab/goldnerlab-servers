@@ -10,11 +10,15 @@
    * On for 3.3 years
    * 458 bad sectors
 
+ * Recompiled Amber 11 against CUDA 5.0
+
 ## 2013-06-06
 
- * AMBER 11 and 12 crashing with a variety of unspecified kernel launch
-   failures, moving from nvidia driver version 319.23 to 4.304.54 appears to
-   fix, also moved to Amber 12
+ * Amber 11 and 12 crashing with a variety of unspecified kernel launch
+   failures
+ * Moved from CUDA toolkit 4.2 to 5.0
+ * Moving from `nvidia` driver version 319.23 to 4.304.54 appears to fix crashes
+   in Amber 12
    
 ## 2013-04-15 
 
