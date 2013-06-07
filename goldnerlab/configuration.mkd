@@ -2,6 +2,13 @@
    * Hostname: goldnerlab.physics.umass.edu
    * IP address: 128.119.56.93
 
+ * Software
+   * Ubuntu
+   * Cherokee running MoinMoin wiki
+   * NFS file server
+   * Samba file server for Windows interoperability
+   * Gitolite git server
+
  * Hardware:
    * nVidia GTX480 1.5GB
    * 18 GB RAM
