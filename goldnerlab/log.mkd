@@ -20,6 +20,7 @@
    * 458 bad sectors
 
  * Recompiled Amber 11 against CUDA 5.0
+ * Upgraded to Ubuntu 12.10 and then 13.04, rebuilt Amber
 
 ## 2013-06-06
 
