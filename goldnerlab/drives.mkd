@@ -4,23 +4,29 @@ smartctl
 
  * /dev/sda:
    * mounted to /
+   * Western Digital WD1600AAJS-00V4A0
+   * Serial number: WD-WMAWF0074183
    * 160GB
    * In goldnerlab, top drive
    * Installed during initial installation
  
  * /dev/sdb:
    * LVM
-   * 1TB
+   * Seagate Barracuda 7200.12: ST31000528AS
+   * Serial number: 9VP3YFPT
+   * 1TB 7200RPM
    * In goldnerlab, second drive from top
    * Installed during initial installation
 
  * /dev/sdc
    * LVM
-   * 1TB
+   * Seagate Barracuda 7200.12: ST31000528AS
+   * Serial number: 9VP408G5
+   * 1TB 7200RPM
    * In goldnerlab, third drive from top
    * Installed during initial installation
 
- * /dev/sdd - /dev/sdk
+ * /dev/sde - /dev/sdl
    * md0 constituents
    * 8x 2TB 5400RPM Samsung HD204UI
    * Serial numbers:
@@ -33,11 +39,12 @@ smartctl
      * /dev/sdj: S2H7JD2ZB14653
    * Installed with array 2011-01
 
- * /dev/sdl
+ * /dev/sdd
    * Spare in md0
    * Western Digital WD20EZX 2TB
    * Serial number: WD-WMC300850775
    * 2TB
    * In goldnerlab, fourth drive from top
    * Installed on 17 Apr 2013 during potential drive failure
+
 
