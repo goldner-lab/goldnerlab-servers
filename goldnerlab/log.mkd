@@ -1,3 +1,12 @@
+## 2013-07-17
+
+ * Installed and configured [collectd][] and [visage][] on goldnerlab and goggle
+ * Wrote a small [shim][collectd-cuda] to get CUDA statistics into collectd
+
+[collectd]: http://www.collectd.org/
+[visage]: https://collectd.org/wiki/index.php/Visage
+[collectd-cuda]: https://github.com/bgamari/cuda-collectd
+
 ## 2013-06-07
  
  * Noticed that `sdl` dropped out
