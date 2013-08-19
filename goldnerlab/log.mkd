@@ -1,3 +1,10 @@
+## 2013-08-18
+
+ * Due to [bug][collectd-bug] in version of `collectd` distributed in Raring, forced to install from source.
+   Source tree can be found in `~bgamari/repos/collectd`, installed to `/opt/collectd`
+ * Configured `goggle` to push samples to `goldnerlab`
+ * Also finally fixed [visage][] installation on `goldnerlab`, start script can be found at `~bgamari/start-visage.conf`
+
 ## 2013-07-17
 
  * Installed and configured [collectd][] and [visage][] on goldnerlab and goggle
