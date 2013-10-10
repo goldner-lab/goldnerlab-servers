@@ -2,6 +2,7 @@
 
 Hostname        MAC                  Location          Description             IP Address
 ============    ==================   ===============   ===================     ================
+goldner-backup  bc:5f:f4:c7:c9:dc    Hasbrouck 314     Backup and storage      TODO
 goldnerlab      00:24:8c:f7:65:2c    Hasbrouck 314     Primary group server    128.119.56.93
 goggle          50:46:5d:6f:4d:5a    Hasbrouck 314     New compute server      128.119.56.205
 magoo           00:1e:c9:58:d8:10    Hasbrouck 314     Windows workstation     128.119.56.248

@@ -1,0 +1,13 @@
+# goldner-backup
+
+Qty    Part                                            Description
+====   ====================                            ================
+1      ASRock Z87 Extreme3 LGA 1150 Intel Z87          Motherboard
+1      SYBA SD-PEX40054                                SATA controller
+1      Seagate NAS HDD ST3000VN000 3TB                 System storage
+8      Seagate HDD.15 ST4000DM000 4TB                  Primary storage
+1      Kingston KHX1600C9D3K4/16GX                     Memory
+1      Cooler Master RC-914-KKN1                       Case
+1      Cooler Master RS800-80GAD3-US 800W              Power supply
+1      Intel Core i5-4430                              CPU
+1      APC Back-UPS Pro RS1500                         UPS

@@ -1,0 +1,11 @@
+# goldner-backup
+
+## 2013-10-10
+
+ * All parts here, machine built
+ * Installed Ubuntu 13.04
+ * Initialized `/dev/md0` (24TB) with RAID 6,
+
+        $ mdadm --create /dev/md0 --level=6 --raid-devices=8 /dev/sd[bcdefghi]
+
+ * Created ext4 filesystem on `/dev/md0`
