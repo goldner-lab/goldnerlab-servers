@@ -8,4 +8,11 @@
 
         $ mdadm --create /dev/md0 --level=6 --raid-devices=8 /dev/sd[bcdefghi]
 
- * Created ext4 filesystem on `/dev/md0`
+ * Built volume, transfer rate between 80 and 120 MByte/s
+ * Partitioned `/dev/md0` with GPT partition table, created partition
+   spanning entire array
+ * Created ext4 filesystem on `/dev/md0p1`
+ * Created `/mnt/backup`, mounted `/dev/md0p1`
+ * Initialized [`bup`](http://github.com/bup/bup) repository in `/mnt/backup/bup`
+ * Backed up `goldnerlab:/mnt/array` to `/mnt/backup/bup`, averaging 20MByte/s
+
