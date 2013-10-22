@@ -3,11 +3,12 @@
    * IP address: 128.119.56.93
 
  * Software
-   * Ubuntu
-   * Cherokee running MoinMoin wiki
+   * Ubuntu Server
+   * Apache running MoinMoin wiki
    * NFS file server
    * Samba file server for Windows interoperability
    * Gitolite git server
+   * `apcupsd` for UPS control
 
  * Hardware:
    * nVidia GTX480 1.5GB

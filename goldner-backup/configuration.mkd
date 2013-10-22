@@ -1,5 +1,7 @@
 # goldner-backup
 
+## hardware
+
 Qty    Part                                            Description
 ====   ====================                            ================
 1      ASRock Z87 Extreme3 LGA 1150 Intel Z87          Motherboard
@@ -11,3 +13,9 @@ Qty    Part                                            Description
 1      Cooler Master RS800-80GAD3-US 800W              Power supply
 1      Intel Core i5-4430                              CPU
 1      APC Back-UPS Pro RS1500                         UPS
+
+## software
+
+  * Ubuntu Server
+  * drives in RAID5 with `md`
+  * `apcupsd` for UPS control
