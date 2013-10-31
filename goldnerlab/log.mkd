@@ -1,5 +1,77 @@
+## 2013-10-28
+
+ * Noticed media failure on ata4.00
+
+## 2013-10-25
+
+ * Finally lost faith in file system
+ * See email to goldnerlab@physics list <id:87wql1dxn9.fsf@gmail.com>
+ * Rebuilt array from scratch with new filesystem moving data temporarily to `goldner-backup`
+
 ## 2013-10-22
  * Expanded `/dev/md0` filesystem to full size of volume
+ * Tried `bup` backup again
+ * Same sort of errors as seen on 2013-10-13, resulting in machine dying
+ * Noticed quite some memory errors in `/var/log/mcelog` from CPU 1
+   bank 8. These look like,
+
+        Fallback Socket memory error count 32753 exceeded threshold: 32753 in 24h
+        Location SOCKET:1 CHANNEL:? DIMM:? []
+        Running trigger `socket-memory-error-trigger'
+        Hardware event. This is not a software error.
+        MCE 0
+        CPU 1 BANK 8 
+        MISC 0 
+        TIME 1370564912 Thu Jun  6 20:28:32 2013
+        MCG status:
+        MCi status:
+        Error overflow
+        Uncorrected error
+        MCi_MISC register valid
+        Processor context corrupt
+        MCA: MEMORY CONTROLLER AC_CHANNEL0_ERR
+        Transaction: Address/Command error
+        Memory address parity error
+        Memory corrected error count (CORE_ERR_CNT): 32754
+        Memory transaction Tracker ID (RTId): 0
+        Memory DIMM ID of error: 0
+        Memory channel ID of error: 0
+        Memory ECC syndrome: 0
+        STATUS ea1ffc80008000b0 MCGSTATUS 0
+        MCGCAP 1c09 APICID 10 SOCKETID 1 
+        CPUID Vendor Intel Family 6 Model 26
+
+ * Really should run `memcheck86` to verify stability
+ * Changed SATA cables again, reseated all drives
+ * `fsck` on array is taking a very long time, finding many files with
+   multiply claimed blocks,
+
+        /backup/home/bgamari/legos/*
+        /backup/home/rich/ALEX/09_05_2011/2011-09-05-run_005.timetag
+        /backup/home/rich/ALEX/10_25_2011/2011-10-25-run_003.timetag
+        /backup/home/rich/ALEX/10_25_2011/2011-10-25-run_006.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_000.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_002.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_004.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_006.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_007.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_008.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_010.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_011.timetag
+        /backup/home/rich/ALEX/10_26_2011/2011-10-26-run_012.timetag
+        /backup/home/rich/ALEX/10_28_2011/2011-10-28-run_000.timetag
+        /backup/home/peker/openmpi-1.2.8/orte/mca/pls/proxy/Makefile.in
+        /backup/home/peker/openmpi-1.2.8/orte/mca/pls/proxy/pls_proxy.c
+        /backup/home/peker/openmpi-1.2.8/orte/mca/pls/proxy/pls_proxy.h
+        /backup/home/peker/openmpi-1.2.8/orte/mca/pls/proxy/pls_proxy_component.c
+        /backup/home/peker/openmpi-1.2.8/orte/mca/pls/rsh/Makefile.am
+        /backup/home/bgamari/repos/bayes-stack/network-topic-models/sweeps/00170.state
+
+ * Thankfully these are all in the `/backup` directory which is redundant
+ * I'll rsync against the backup on `goldner-backup` just to make sure nothing was damaged
+ * These blocks are generally all shared with files in `/home/bgamari/.bup/index-cache`
+ * Going to move `BUPDIR` to `/` for next backup
+ * 
  
 ## 2013-10-19
 
