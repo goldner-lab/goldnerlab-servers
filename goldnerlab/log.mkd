@@ -1,3 +1,7 @@
+## 2014-04-11
+
+ * In light of Heartbleed vulnerability regenerated SSL keys as per http://myrddin.org/howto/debian-apache-ssl/
+ 
 ## 2013-10-28
 
  * Noticed media failure on ata4.00
