@@ -1,3 +1,9 @@
+# goldnerlab
+
+## 2014-05-08
+ * At behest of John Denker `smartd` was enabled
+   (`/etc/default/smartmontools`), root's mail forwarded to bgamari (`/root/.forward`)
+
 ## 2014-04-11
 
  * In light of Heartbleed vulnerability regenerated SSL keys as per http://myrddin.org/howto/debian-apache-ssl/
