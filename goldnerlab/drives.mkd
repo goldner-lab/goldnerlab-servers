@@ -1,6 +1,12 @@
-ledctl
 
-smartctl
+# Useful notes
+
+`ledctl` can be used to illuminate identifying indicators of
+`goldnerlab` removable trays.
+
+`smartctl` is invaluable. Use it.
+
+# Drives
 
  * root
    * Partitions:
