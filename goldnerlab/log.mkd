@@ -9,7 +9,7 @@
     2. dd'd the old `/` volume to the new drive
     3. deleted the swap partition and old LVM partition from the new drive
     4. did some disk acrobatics to move the old `/srv` partition on
-       the LVM partition to `/`
+       the LVM volume to `/`
  * While doing this I noticed that both ST31000528AS drives have bad
    sectors:
     * 9VP3YFPT has 520 bad sectors
@@ -23,6 +23,8 @@
         $ mdadm --grow --bitmap=internal /dev/md0
 
    This should speed rebuilds in the future.
+ * Also noticed that WD20EZRX-00D had fallen out of `/dev/md0` as spare
+ * Reformatted drive with GPT partition table and re-added to array
 
 [write-intent bitmap]: https://raid.wiki.kernel.org/index.php/Write-intent_bitmap
 
