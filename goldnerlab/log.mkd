@@ -144,7 +144,6 @@
  * I'll rsync against the backup on `goldner-backup` just to make sure nothing was damaged
  * These blocks are generally all shared with files in `/home/bgamari/.bup/index-cache`
  * Going to move `BUPDIR` to `/` for next backup
- * 
  
 ## 2013-10-19
 
@@ -161,43 +160,45 @@
  * Strange slowness of `bup bloom`
  * Still seeing occassional funkiness of `ata2.01`,
 
-      [2649467.141902] ata2.01: exception Emask 0x0 SAct 0x3f4a952 SErr 0x400000 action 0x6
-      [2649467.217305] ata2.01: irq_stat 0x00060002, device error via SDB FIS
-      [2649467.293452] ata2.01: SError: { Handshk }
-      [2649467.369193] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649467.444859] ata2.01: cmd 61/00:08:3f:b4:f2/04:00:e6:00:00/40 tag 1 ncq 524288 out
-      [2649467.444859]          res f4/b2:01:01:00:00/00:00:00:10:f4/00 Emask 0x2 (HSM violation)
-      [2649467.598529] ata2.01: status: { Busy }
-      [2649467.675040] ata2.01: error: { ICRC IDNF }
-      [2649467.750713] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649467.826947] ata2.01: cmd 61/00:20:3f:f8:f2/04:00:e6:00:00/40 tag 4 ncq 524288 out
-      [2649467.826947]          res f4/b2:01:01:00:00/00:00:00:40:f4/00 Emask 0x2 (HSM violation)
-      [2649467.980702] ata2.01: status: { Busy }
-      [2649468.057229] ata2.01: error: { ICRC IDNF }
-      [2649468.133538] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649468.209410] ata2.01: cmd 61/00:30:3f:fc:f2/04:00:e6:00:00/40 tag 6 ncq 524288 out
-      [2649468.209410]          res f4/b2:01:01:00:00/00:00:00:60:f4/00 Emask 0x2 (HSM violation)
-      [2649468.363981] ata2.01: status: { Busy }
-      [2649468.441165] ata2.01: error: { ICRC IDNF }
-      [2649468.517062] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649468.593622] ata2.01: cmd 61/00:40:3f:f4:f2/04:00:e6:00:00/40 tag 8 ncq 524288 out
-      [2649468.593622]          res f4/b2:01:01:00:00/00:00:00:80:f4/00 Emask 0x2 (HSM violation)
-      [2649468.748634] ata2.01: status: { Busy }
-      [2649468.825379] ata2.01: error: { ICRC IDNF }
-      [2649468.901975] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649468.978331] ata2.01: cmd 61/00:58:3f:64:f2/04:00:e6:00:00/40 tag 11 ncq 524288 out
-      [2649468.978331]          res f4/b2:01:01:00:00/00:00:00:b0:f4/00 Emask 0x2 (HSM violation)
-      [2649469.133575] ata2.01: status: { Busy }
-      [2649469.210987] ata2.01: error: { ICRC IDNF }
-      [2649469.287550] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649469.364029] ata2.01: cmd 61/00:68:3f:f0:f2/04:00:e6:00:00/40 tag 13 ncq 524288 out
-      [2649469.364029]          res f4/b2:01:01:00:00/00:00:00:d0:f4/00 Emask 0x2 (HSM violation)
-      [2649469.518738] ata2.01: status: { Busy }
-      [2649469.596631] ata2.01: error: { ICRC IDNF }
-      [2649469.673598] ata2.01: failed command: WRITE FPDMA QUEUED
-      [2649469.751000] ata2.01: cmd 61/00:78:3f:6c:f2/04:00:e6:00:00/40 tag 15 ncq 524288 out
-      [2649469.751000]          res 61/00:78:3f:6c:f2/00:00:e6:00:00/40 Emask 0x1 (device error)
-      [2649469.906991] ata2.01: status: { DRDY DF ERR }
+   ```
+   [2649467.141902] ata2.01: exception Emask 0x0 SAct 0x3f4a952 SErr 0x400000 action 0x6
+   [2649467.217305] ata2.01: irq_stat 0x00060002, device error via SDB FIS
+   [2649467.293452] ata2.01: SError: { Handshk }
+   [2649467.369193] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649467.444859] ata2.01: cmd 61/00:08:3f:b4:f2/04:00:e6:00:00/40 tag 1 ncq 524288 out
+   [2649467.444859]          res f4/b2:01:01:00:00/00:00:00:10:f4/00 Emask 0x2 (HSM violation)
+   [2649467.598529] ata2.01: status: { Busy }
+   [2649467.675040] ata2.01: error: { ICRC IDNF }
+   [2649467.750713] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649467.826947] ata2.01: cmd 61/00:20:3f:f8:f2/04:00:e6:00:00/40 tag 4 ncq 524288 out
+   [2649467.826947]          res f4/b2:01:01:00:00/00:00:00:40:f4/00 Emask 0x2 (HSM violation)
+   [2649467.980702] ata2.01: status: { Busy }
+   [2649468.057229] ata2.01: error: { ICRC IDNF }
+   [2649468.133538] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649468.209410] ata2.01: cmd 61/00:30:3f:fc:f2/04:00:e6:00:00/40 tag 6 ncq 524288 out
+   [2649468.209410]          res f4/b2:01:01:00:00/00:00:00:60:f4/00 Emask 0x2 (HSM violation)
+   [2649468.363981] ata2.01: status: { Busy }
+   [2649468.441165] ata2.01: error: { ICRC IDNF }
+   [2649468.517062] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649468.593622] ata2.01: cmd 61/00:40:3f:f4:f2/04:00:e6:00:00/40 tag 8 ncq 524288 out
+   [2649468.593622]          res f4/b2:01:01:00:00/00:00:00:80:f4/00 Emask 0x2 (HSM violation)
+   [2649468.748634] ata2.01: status: { Busy }
+   [2649468.825379] ata2.01: error: { ICRC IDNF }
+   [2649468.901975] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649468.978331] ata2.01: cmd 61/00:58:3f:64:f2/04:00:e6:00:00/40 tag 11 ncq 524288 out
+   [2649468.978331]          res f4/b2:01:01:00:00/00:00:00:b0:f4/00 Emask 0x2 (HSM violation)
+   [2649469.133575] ata2.01: status: { Busy }
+   [2649469.210987] ata2.01: error: { ICRC IDNF }
+   [2649469.287550] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649469.364029] ata2.01: cmd 61/00:68:3f:f0:f2/04:00:e6:00:00/40 tag 13 ncq 524288 out
+   [2649469.364029]          res f4/b2:01:01:00:00/00:00:00:d0:f4/00 Emask 0x2 (HSM violation)
+   [2649469.518738] ata2.01: status: { Busy }
+   [2649469.596631] ata2.01: error: { ICRC IDNF }
+   [2649469.673598] ata2.01: failed command: WRITE FPDMA QUEUED
+   [2649469.751000] ata2.01: cmd 61/00:78:3f:6c:f2/04:00:e6:00:00/40 tag 15 ncq 524288 out
+   [2649469.751000]          res 61/00:78:3f:6c:f2/00:00:e6:00:00/40 Emask 0x1 (device error)
+   [2649469.906991] ata2.01: status: { DRDY DF ERR }
+   ```
 
 
 ## 2013-08-18
@@ -219,20 +220,24 @@
 ## 2013-06-07
  
  * Noticed that `sdl` dropped out
-   * `dmesg`
-        [ 2289.401292] end_request: I/O error, dev sdl, sector 223426111
-        [ 2289.401314] sd 7:3:0:0: [sdl]  Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
-        [ 2289.401317] sd 7:3:0:0: [sdl]  Sense Key : Aborted Command [current] [descriptor]
-        [ 2289.401320] Descriptor sense data with sense descriptors (in hex):
-        [ 2289.401322]         72 0b 00 00 00 00 00 0c 00 0a 80 00 00 00 51 e0 
-        [ 2289.401329]         00 00 00 01 
-        [ 2289.401333] sd 7:3:0:0: [sdl]  Add. Sense: No additional sense information
-        [ 2289.401336] sd 7:3:0:0: [sdl] CDB: Write(10): 2a 00 0d 51 3a 3f 00 04 00 00
-        [ 2289.401342] end_request: I/O error, dev sdl, sector 223427135
-        [ 2289.401359] ata8: EH complete
-        [ 2289.401830] ata8.03: detaching (SCSI 7:3:0:0)
+
+   ```
+   $ dmesg
+   [ 2289.401292] end_request: I/O error, dev sdl, sector 223426111
+   [ 2289.401314] sd 7:3:0:0: [sdl]  Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+   [ 2289.401317] sd 7:3:0:0: [sdl]  Sense Key : Aborted Command [current] [descriptor]
+   [ 2289.401320] Descriptor sense data with sense descriptors (in hex):
+   [ 2289.401322]         72 0b 00 00 00 00 00 0c 00 0a 80 00 00 00 51 e0 
+   [ 2289.401329]         00 00 00 01 
+   [ 2289.401333] sd 7:3:0:0: [sdl]  Add. Sense: No additional sense information
+   [ 2289.401336] sd 7:3:0:0: [sdl] CDB: Write(10): 2a 00 0d 51 3a 3f 00 04 00 00
+   [ 2289.401342] end_request: I/O error, dev sdl, sector 223427135
+   [ 2289.401359] ata8: EH complete
+   [ 2289.401830] ata8.03: detaching (SCSI 7:3:0:0)
+   ```
 
    * Not entiredly sure which drive this is, going to label all drives
+
  * Looking back at `sdb` again:
    * On for 3.3 years
    * 458 bad sectors
