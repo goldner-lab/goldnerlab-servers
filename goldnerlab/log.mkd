@@ -32,19 +32,21 @@
 
  * Noted presence of suspicious messages from `smartd` in `/var/log/syslog`. e.g.,
 
-       smartd[3248]: Device: /dev/sdf, type changed from 'scsi' to 'sat'
-       smartd[3248]: Device: /dev/sdf [SAT], opened
-       smartd[3248]: Device: /dev/sdf [SAT], SAMSUNG HD204UI, S/N:S2H7JD2ZB07815, WWN:5-0024e9-00450603c, FW:1AQ10001, 2.00 TB
-       smartd[3248]: Device: /dev/sdf [SAT], found in smartd database: SAMSUNG SpinPoint F4 EG (AF)
-       smartd[3248]: Device: /dev/sdf [SAT], WARNING: Using smartmontools or hdparm with this
-       smartd[3248]: drive may result in data loss due to a firmware bug.
-       smartd[3248]: ****** THIS DRIVE MAY OR MAY NOT BE AFFECTED! ******
-       smartd[3248]: Buggy and fixed firmware report same version number!
-       smartd[3248]: See the following web pages for details:
-       smartd[3248]: http://knowledge.seagate.com/articles/en_US/FAQ/223571en
-       smartd[3248]: http://sourceforge.net/apps/trac/smartmontools/wiki/SamsungF4EGBadBlocks
-       smartd[3248]: Device: /dev/sdf [SAT], is SMART capable. Adding to "monitor" list.
-       smartd[3248]: Device: /dev/sdf [SAT], state read from /var/lib/smartmontools/smartd.SAMSUNG_HD204UI-S2H7JD2ZB07815.ata.state
+   ```
+   smartd[3248]: Device: /dev/sdf, type changed from 'scsi' to 'sat'
+   smartd[3248]: Device: /dev/sdf [SAT], opened
+   smartd[3248]: Device: /dev/sdf [SAT], SAMSUNG HD204UI, S/N:S2H7JD2ZB07815, WWN:5-0024e9-00450603c, FW:1AQ10001, 2.00 TB
+   smartd[3248]: Device: /dev/sdf [SAT], found in smartd database: SAMSUNG SpinPoint F4 EG (AF)
+   smartd[3248]: Device: /dev/sdf [SAT], WARNING: Using smartmontools or hdparm with this
+   smartd[3248]: drive may result in data loss due to a firmware bug.
+   smartd[3248]: ****** THIS DRIVE MAY OR MAY NOT BE AFFECTED! ******
+   smartd[3248]: Buggy and fixed firmware report same version number!
+   smartd[3248]: See the following web pages for details:
+   smartd[3248]: http://knowledge.seagate.com/articles/en_US/FAQ/223571en
+   smartd[3248]: http://sourceforge.net/apps/trac/smartmontools/wiki/SamsungF4EGBadBlocks
+   smartd[3248]: Device: /dev/sdf [SAT], is SMART capable. Adding to "monitor" list.
+   smartd[3248]: Device: /dev/sdf [SAT], state read from /var/lib/smartmontools/smartd.SAMSUNG_HD204UI-S2H7JD2ZB07815.ata.state
+   ```
 
  * Drive affected by [bug](http://sourceforge.net/apps/trac/smartmontools/wiki/SamsungF4EGBadBlocks)
  * Affected drives in goldnerlab RAID array,
