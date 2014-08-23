@@ -2,20 +2,22 @@ ledctl
 
 smartctl
 
- * /dev/sda:
-   * mounted to /
-   * Western Digital WD1600AAJS-00V4A0
-   * Serial number: WD-WMAWF0074183
-   * 160GB
-   * In goldnerlab, top drive
-   * Installed during initial installation
- 
+ * /dev/sdi
+   * Partitions:
+     * 0: ext4, mounted to / 
+   * Seagate ST2000DM001-1ER164
+   * Serial number: Z4Z08897
+   * 2TB 7200RPM
+   * In goldnerlab, drive in top removable tray
+   * Installed on 22 Aug 2014 during root switchover away from 
+     Western Digital WD1600AAJS-00V4A0
+
  * /dev/sdb:
    * LVM
    * Seagate Barracuda 7200.12: ST31000528AS
    * Serial number: 9VP3YFPT
    * 1TB 7200RPM
-   * In goldnerlab, second drive from top
+   * In goldnerlab, second removable tray from top
    * Installed during initial installation
 
  * /dev/sdc
@@ -23,7 +25,7 @@ smartctl
    * Seagate Barracuda 7200.12: ST31000528AS
    * Serial number: 9VP408G5
    * 1TB 7200RPM
-   * In goldnerlab, third drive from top
+   * In goldnerlab, third removable tray from top
    * Installed during initial installation
 
  * /dev/sde - /dev/sdl
@@ -48,3 +50,13 @@ smartctl
    * Installed on 17 Apr 2013 during potential drive failure
 
 
+## Former drives
+
+ * /dev/sda:
+   * mounted to /
+   * Western Digital WD1600AAJS-00V4A0
+   * Serial number: WD-WMAWF0074183
+   * 160GB
+   * In goldnerlab, top drive
+   * Installed during initial installation
+ 

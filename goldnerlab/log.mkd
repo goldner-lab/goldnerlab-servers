@@ -1,5 +1,31 @@
 # goldnerlab
 
+## 2014-08-22
+
+ * After running out or nearly running out of disk space on  `/` several times,
+   I purchased a new drive (Seagate ST2000DM001-1ER164)
+ * Tonight I,
+    1. booted from installation media
+    2. dd'd the old `/` volume to the new drive
+    3. deleted the swap partition and old LVM partition from the new drive
+    4. did some disk acrobatics to move the old `/srv` partition on
+       the LVM partition to `/`
+ * While doing this I noticed that both ST31000528AS drives have bad
+   sectors:
+    * 9VP3YFPT has 520 bad sectors
+    * 9VP408G5 has 55 bad sectors
+    * all other drives are perfectly healthy
+ * Now since the LVM volume is officially unneeded the two failing
+   drives aren't terribly important
+ * May repurpose them for temporary scratch space at some point in the future
+ * In other news, I added a [write-intent bitmap][] to `/mnt/array` with,
+
+        $ mdadm --grow --bitmap=internal /dev/md0
+
+   This should speed rebuilds in the future.
+
+[write-intent bitmap]: https://raid.wiki.kernel.org/index.php/Write-intent_bitmap
+
 ## 2014-05-30
 
  * Noted presence of suspicious messages from `smartd` in `/var/log/syslog`. e.g.,
