@@ -5,6 +5,16 @@
  * Brought up parsegian array on sil1312 adapter.
  * See [the Parsegian array log](parsegian-array.mkd) for details.
 
+ * Finally going to fix permissions issues (backup permissions and `~lab` issues)
+   by enabling POSIX ACLs on `/mnt/array` and `/mnt/parsegian`
+ * Gave `bup` user read on `/mnt/array`
+
+     $ sudo setfacl -R -m u:bup:rX /mnt/array
+
+ * Set default ACL for `/home/lab`
+
+     $ sudo setfacl -R -m d:g:lab:rX /home/lab
+
 ## 2014-09-03
 
  * Finally dealt with MoinMoin issues
