@@ -1,5 +1,10 @@
 # goldnerlab
 
+## 2014-09-10
+
+ * Brought up parsegian array on sil1312 adapter.
+ * See [the Parsegian array log](parsegian-array.mkd) for details.
+
 ## 2014-09-03
 
  * Finally dealt with MoinMoin issues

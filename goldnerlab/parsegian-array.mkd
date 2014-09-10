@@ -1,0 +1,46 @@
+## 10 Sept 2014: Initial setup
+
+Formatted each disk with GPT partition table. Created a single
+partition on each with `parted`. For instance,
+
+    (parted) select /dev/sdl
+    Using /dev/sdl
+    (parted) mkpart primary 1 100%
+    (parted) print
+    Model: ATA ST3000VN000-1HJ1 (scsi)
+    Disk /dev/sdl: 3001GB
+    Sector size (logical/physical): 512B/4096B
+    Partition Table: gpt
+
+    Number  Start   End     Size    File system  Name     Flags
+     1      1049kB  3001GB  3001GB               primary
+
+
+Created `md` volume with,
+
+    $ sudo mdadm --create --verbose -n4 /dev/md/parsegian --level=6 /dev/sd[ijkl]
+
+Created a partition on the md volume with,
+
+    $ sudo parted /dev/md/parsegian
+    GNU Parted 2.3
+    Using /dev/md127
+    Welcome to GNU Parted! Type 'help' to view a list of commands.
+    (parted) mklabel gpt
+    (parted) mkpart primary 1 100%
+    (parted) print
+    Model: Linux Software RAID Array (md)
+    Disk /dev/md127: 6001GB
+    Sector size (logical/physical): 512B/4096B
+    Partition Table: gpt
+
+    Number  Start   End     Size    File system  Name     Flags
+     1      1049kB  6001GB  6001GB               primary
+
+Created filesystem with,
+
+    $ sudo mkfs.ext4 /dev/md/parsegian1
+
+Added entry to `fstab`,
+
+    /dev/md/parsegian1 /mnt/parsegian ext4   defaults        0       2
