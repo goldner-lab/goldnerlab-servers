@@ -1,5 +1,12 @@
 # goldnerlab
 
+## 2014-09-03
+
+ * Finally dealt with MoinMoin issues
+ * 91000 spam accounts have been created
+ * Examined the creation IPs, deleted all accounts created by IPs with
+   five or more associated accounts
+
 ## 2014-08-22
 
  * After running out or nearly running out of disk space on  `/` several times,
