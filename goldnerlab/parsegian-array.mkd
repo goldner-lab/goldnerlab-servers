@@ -44,3 +44,6 @@ Created filesystem with,
 Added entry to `fstab`,
 
     /dev/md/parsegian1 /mnt/parsegian ext4   defaults        0       2
+
+Cleaned up `/etc/samba/smb.conf` and added `parsegian` share pointing
+to `/mnt/parsegian/data`.

@@ -1,5 +1,12 @@
 # goldner-backup
 
+## 2014-01-12
+ * Upgrading from 13.10 to 14.04 to 14.10
+
+## 2014-01-09
+ * Machine went down in Nov-2013, sadly unnoticed until now
+ * Needed to force re-add several disks to array
+
 ## 2014-05-08
  * At behest of John Denker `smartd` was enabled
    (`/etc/default/smartmontools`), root's mail forwarded to bgamari (`/root/.forward`)

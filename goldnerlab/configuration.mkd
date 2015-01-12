@@ -1,3 +1,5 @@
+# Overview
+
  * Network:
    * Hostname: goldnerlab.physics.umass.edu
    * IP address: 128.119.56.93
@@ -15,3 +17,12 @@
    * 18 GB RAM
    * 16 cores (Intel Xeon 5500)
 
+# Services
+
+## Backup
+
+Backup of `goldnerlab:/mnt/array` to
+`goldner-backup:/mnt/backup/bup` is done with
+[bup](http://github.com/bup/bup). This runs daily at midnight from the
+crontab of the `bup` user (`~bup/.crontab`). The backup script can be
+found in `/home/bup`.
