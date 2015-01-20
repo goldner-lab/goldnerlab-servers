@@ -19,6 +19,11 @@
 
 # Services
 
+## Mail
+
+Local mail delivery through `postfix`. `root` and `bup` user mail forwarded to
+`bgamari`.
+
 ## Backup
 
 Backup of `goldnerlab:/mnt/array` to
@@ -26,3 +31,4 @@ Backup of `goldnerlab:/mnt/array` to
 [bup](http://github.com/bup/bup). This runs daily at midnight from the
 crontab of the `bup` user (`~bup/.crontab`). The backup script can be
 found in `/home/bup`.
+
