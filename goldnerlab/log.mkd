@@ -1,5 +1,17 @@
 # goldnerlab
 
+## 2015-01-19
+
+ * Noted 1 uncorrectable sector,
+
+        Device: /dev/sdo [SAT], 1 Offline uncorrectable sectors
+
+        Device info:
+        ST31000528AS, S/N:9VP408G5, WWN:5-000c50-01a809c24, FW:CC38, 1.00 TB
+
+ * Finally have backup working reliably again after `goldner-backup` went down
+
+
 ## 2014-09-10
 
  * Brought up parsegian array on sil1312 adapter.
