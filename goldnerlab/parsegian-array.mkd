@@ -1,3 +1,48 @@
+# Parsegian disk array log
+
+## 27 Feb 2015: Disk troubles?
+
+Noticed this early in boot,
+
+```
+[  191.740323] ata3.00: SATA link up 1.5 Gbps (SStatus 113 SControl 310)
+[  191.741729] ata3.00: configured for UDMA/33
+[  191.741819] sd 2:0:0:0: [sdi]  
+[  191.741822] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+[  191.741825] sd 2:0:0:0: [sdi]  
+[  191.741826] Sense Key : Aborted Command [current] [descriptor]
+[  191.741830] Descriptor sense data with sense descriptors (in hex):
+[  191.741831]         72 0b 47 00 00 00 00 0c 00 0a 80 00 00 00 00 00 
+[  191.741840]         00 04 34 18 
+[  191.741846] sd 2:0:0:0: [sdi]  
+[  191.741847] Add. Sense: Scsi parity error
+[  191.741849] sd 2:0:0:0: [sdi] CDB: 
+[  191.741850] Write(16): 8a 00 00 00 00 00 00 04 34 18 00 00 03 e0 00 00
+[  191.741857] end_request: I/O error, dev sdi, sector 275480
+```
+
+And this a bit later,
+
+```
+[ 7290.223161] md: resuming recovery of md127 from checkpoint.
+[ 7290.340243]  md127: p1
+[ 7290.373949] md/raid:md127: read error corrected (8 sectors at 262912 on sdi1)
+[ 7290.374060] md/raid:md127: read error corrected (8 sectors at 263168 on sdi1)
+[ 7290.386714] md/raid:md127: read error corrected (8 sectors at 262920 on sdi1)
+[ 7290.386724] md/raid:md127: read error corrected (8 sectors at 262928 on sdi1)
+[ 7290.386727] md/raid:md127: read error corrected (8 sectors at 262936 on sdi1)
+[ 7290.386730] md/raid:md127: read error corrected (8 sectors at 262944 on sdi1)
+[ 7290.386732] md/raid:md127: read error corrected (8 sectors at 262952 on sdi1)
+[ 7290.386734] md/raid:md127: read error corrected (8 sectors at 262960 on sdi1)
+[ 7290.386736] md/raid:md127: read error corrected (8 sectors at 262968 on sdi1)
+[ 7290.386738] md/raid:md127: read error corrected (8 sectors at 262976 on sdi1)
+```
+
+`smartctl` shows no reallocated, pending, or uncorrectable sectors.
+
+For future reference: `sdi == PTUUID=b45c2183-7714-4a31-b31b-b989cfe696bd`
+
+
 ## 10 Sept 2014: Initial setup
 
 Formatted each disk with GPT partition table. Created a single
