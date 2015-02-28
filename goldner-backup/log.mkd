@@ -5,7 +5,8 @@
  * Joe noticed that sdg, sdh, and sdi had fallen out of sync
  * I rebooted machine, indeed the three drives were off array
  * SMART showed no signs of failure
- * Forced a rebuild of the array
+ * Forced a rebuild of the array with `mdadm --create /dev/md0 --chunk=512 --level=6 --raid-devices=8 /dev/sd[bcdefghi]`
+
  * Several hours in to rebuild things started going awry,
 
    ```
@@ -99,7 +100,7 @@
    ```
 
  * Sounds like power supply issue (e.g. http://eliasoenal.com/2012/10/31/power-supply-failures-can-be-pretty-annoying-to-find/)
-
+ 
 ## 2015-01-12
  * Upgrading from 13.10 to 14.04 to 14.10
 
