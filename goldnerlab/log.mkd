@@ -1,5 +1,48 @@
 # goldnerlab
 
+## 2015-02-27: Night of horror
+
+ * Naturally the day that we realize that the backup server has bad disks/power supply,
+   /mnt/array decides life is a bit too dull
+ * Background:
+    * Parsegian array was briefly turned off while mounted this morning while moving goggle
+    * While one of the SATA links came back up without a beat, it seems the other did not, causing the
+      array to lose two drives
+    * Moreover, the link would not come up even after a rescan
+	* Tonight I thought I would reboot to reestablish the link and
+      allow the array to resync over the weekend.
+ * I rebooted goldnerlab
+ * Init complained that /mnt/array wasn't found
+ * Looked at mdstat, two arrays listed, both degraded
+ * Looking deeper revealed that half of the disks belonging to the
+   array (`sd[cefg]`) had version 0.9 md superblocks on the block
+   device while the other half of the disks (`sd[abdh]1`) had 1.2
+   superblocks on a partition
+ * Even more strange is that the 0.9 superblocks were last updated in
+   2013 and indicated that the volume was a RAID5, clearly these are
+   out of date
+ * The newer superblocks look more reasonable, indicating RAID6, last
+   updated today
+ * How the hell could this be?
+ * After a great deal of poking around, Kieran noticed that there were
+   single-partition partition tables on `sd[cefg]` but there were no corresponding
+   block devices for these partitions
+ * `partprobe /dev/sd[cefg]` prompted the kernel to recognize the partitions
+ * `mdadm --assemble --scan` brought the md array back up successfully
+ * Why the hell did this happen?
+ * When I brought the old RAID5 array over to RAID6 I suspect the old
+   superblocks were never zeroed
+ * I still don't know why the kernel needed `partprobe` to find the partition tables
+ * Conclusion:
+    * I hate md
+    * At least it's over
+    * The old volume-level md superblocks need to be zeroed once the backup array is up again
+    * affected volumes:
+        * sdc: UUID=c01c4a64-7221-b35c-9d12-9b646af6b314
+        * sde: UUID=c01c4a64-7221-b35c-9d12-9b646af6b314
+        * sdf: UUID=c01c4a64-7221-b35c-9d12-9b646af6b314
+        * sdg: UUID=c01c4a64-7221-b35c-9d12-9b646af6b314
+ 
 ## 2015-01-19
 
  * Noted 1 uncorrectable sector,
