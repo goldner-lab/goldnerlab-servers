@@ -1,9 +1,110 @@
 # goldner-backup
 
-## 2014-01-12
+## 2015-02-27
+
+ * Joe noticed that sdg, sdh, and sdi had fallen out of sync
+ * I rebooted machine, indeed the three drives were off array
+ * SMART showed no signs of failure
+ * Forced a rebuild of the array with `mdadm --create /dev/md0 --chunk=512 --level=6 --raid-devices=8 /dev/sd[bcdefghi]`
+
+ * Several hours in to rebuild things started going awry,
+
+   ```
+   [ 5358.157602] ata7.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6 frozen
+   [ 5358.158366] ata7.00: failed command: IDENTIFY DEVICE
+   [ 5358.158751] ata7.00: cmd ec/00:01:00:00:00/00:00:00:00:00/00 tag 6 pio 512 in
+            res 40/00:00:00:00:00/00:00:00:00:00/00 Emask 0x4 (timeout)
+   [ 5358.159503] ata7.00: status: { DRDY }
+   [ 5358.159833] ata7: hard resetting link
+   [ 5363.518868] ata7: link is slow to respond, please be patient (ready=0)
+   [ 5368.161105] ata7: COMRESET failed (errno=-16)
+   [ 5368.162049] ata7: hard resetting link
+   [ 5373.514410] ata7: link is slow to respond, please be patient (ready=0)
+   [ 5378.156651] ata7: COMRESET failed (errno=-16)
+   [ 5378.157691] ata7: hard resetting link
+   [ 5383.509949] ata7: link is slow to respond, please be patient (ready=0)
+   [ 5413.153022] ata7: COMRESET failed (errno=-16)
+   [ 5413.153965] ata7: limiting SATA link speed to 3.0 Gbps
+   [ 5413.153970] ata7: hard resetting link
+   [ 5418.170772] ata7: COMRESET failed (errno=-16)
+   [ 5418.171953] ata7: reset failed, giving up
+   [ 5418.172574] ata7.00: disabled
+   [ 5418.172601] ata7: EH complete
+   [ 5418.172651] sd 6:0:0:0: [sdg] Unhandled error code
+   [ 5418.172655] sd 6:0:0:0: [sdg]  
+   [ 5418.172658] Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
+   [ 5418.172662] sd 6:0:0:0: [sdg] CDB: 
+   [ 5418.172664] Read(16): 88 00 00 00 00 00 18 a0 9c 00 00 00 04 00 00 00
+   [ 5418.172683] end_request: I/O error, dev sdg, sector 413178880
+   [ 5418.172709] sd 6:0:0:0: [sdg] Unhandled error code
+   [ 5418.172712] sd 6:0:0:0: [sdg]  
+   [ 5418.172714] Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
+   [ 5418.172716] sd 6:0:0:0: [sdg] CDB: 
+   [ 5418.172726] Read(16): 88 00 00 00 00 00 18 a0 a0 00 00 00 04 00 00 00
+   [ 5418.172728] end_request: I/O error, dev sdg, sector 413179904
+   [ 5418.174098] end_request: I/O error, dev sdg, sector 16
+   [ 5418.174753] md: super_written gets error=-5, uptodate=0
+   [ 5418.174758] md/raid:md0: Disk failure on sdg, disabling device.
+   md/raid:md0: Operation continuing on 7 devices.
+   [ 5418.176221] sd 6:0:0:0: [sdg] Unhandled error code
+   [ 5418.176233] sd 6:0:0:0: [sdg]  
+   [ 5418.176240] Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
+   [ 5418.176243] sd 6:0:0:0: [sdg] CDB: 
+   [ 5418.176245] Read(16): 88 00 00 00 00 00 18 a0 a0 00 00 00 04 00 00 00
+   [ 5418.176261] end_request: I/O error, dev sdg, sector 413179904
+   [ 5418.176400] sd 6:0:0:0: [sdg] Unhandled error code
+   [ 5418.176403] sd 6:0:0:0: [sdg]  
+   [ 5418.176404] Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
+   [ 5418.176406] sd 6:0:0:0: [sdg] CDB: 
+   [ 5418.176417] Read(16): 88 00 00 00 00 00 18 a0 9c 00 00 00 00 10 00 00
+   [ 5418.176419] end_request: I/O error, dev sdg, sector 413178880
+   ```
+
+ * `sdh` and `sdi` failed soon after,
+
+   ```
+   [ 5426.168840] ata9.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6 frozen
+   [ 5426.169783] ata9.00: failed command: FLUSH CACHE EXT
+   [ 5426.170724] ata9.00: cmd ea/00:00:00:00:00/00:00:00:00:00/a0 tag 7
+              res 40/00:00:00:00:00/00:00:00:00:00/00 Emask 0x4 (timeout)
+   [ 5426.172700] ata9.00: status: { DRDY }
+   [ 5426.173668] ata9: hard resetting link
+   [ 5426.173684] ata10.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6 frozen
+   [ 5426.174685] ata10.00: failed command: FLUSH CACHE EXT
+   [ 5426.175695] ata10.00: cmd ea/00:00:00:00:00/00:00:00:00:00/a0 tag 8
+              res 40/00:00:00:00:00/00:00:00:00:00/00 Emask 0x4 (timeout)
+   [ 5426.177833] ata10.00: status: { DRDY }
+   [ 5426.178948] ata10: hard resetting link
+   [ 5426.995754] ata9: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+   [ 5426.999768] ata10: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+   [ 5431.989562] ata9.00: qc timeout (cmd 0xec)
+   [ 5431.993544] ata10.00: qc timeout (cmd 0xec)
+   [ 5432.492881] ata9.00: failed to IDENTIFY (I/O error, err_mask=0x4)
+   [ 5432.492883] ata9.00: revalidation failed (errno=-5)
+   [ 5432.493236] ata9: hard resetting link
+   [ 5432.496876] ata10.00: failed to IDENTIFY (I/O error, err_mask=0x4)
+   [ 5432.496878] ata10.00: revalidation failed (errno=-5)
+   ...
+   [ 5476.925917] md: super_written gets error=-5, uptodate=0
+   [ 5476.925919] md/raid:md0: Disk failure on sdh, disabling device.
+   md/raid:md0: Operation continuing on 6 devices.
+   [ 5476.926751] end_request: I/O error, dev sdh, sector 16
+   [ 5476.927175] md: super_written gets error=-5, uptodate=0
+   [ 5476.929501] ata10: EH complete
+   [ 5476.929513] end_request: I/O error, dev sdi, sector 16
+   [ 5476.929945] md: super_written gets error=-5, uptodate=0
+   [ 5476.929946] md/raid:md0: Disk failure on sdi, disabling device.
+   md/raid:md0: Operation continuing on 5 devices.
+   [ 5476.930827] end_request: I/O error, dev sdi, sector 16
+   [ 5476.931264] md: super_written gets error=-5, uptodate=0
+   ```
+
+ * Sounds like power supply issue (e.g. http://eliasoenal.com/2012/10/31/power-supply-failures-can-be-pretty-annoying-to-find/)
+ 
+## 2015-01-12
  * Upgrading from 13.10 to 14.04 to 14.10
 
-## 2014-01-09
+## 2015-01-09
  * Machine went down in Nov-2013, sadly unnoticed until now
  * Needed to force re-add several disks to array
 
