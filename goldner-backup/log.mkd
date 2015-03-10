@@ -1,5 +1,51 @@
 # goldner-backup
 
+## 2015-03-10: Array recovery
+
+ * Joe and I looked at the array issue last week and determined that
+   all three failing drives were on the same Marvell PCIe SATA controller
+ * Replaced with a sil3124.
+ * Now I need to recover the array, working from <https://raid.wiki.kernel.org/index.php/RAID_Recovery>
+ * The devices are currently,
+
+      raid #    device       UUID_SUB
+	  =======   =======      ========================
+	  0         sdd          d32548b2-0234-2979-6f40-8bbaba9c6d81
+	  1         sdi          d638f029-e0e3-c5c4-baa9-7eead7eef80c
+	  2         sdg          dd72a6a3-ac05-b44c-a2f3-82e2b8980569
+	  3         sdh          6efb701c-ea16-e516-7f9c-1aac0246ed59
+	  4         sdf          3df8eb59-e0a2-da0e-ef0a-d5f426fe52b0
+	  5         sdb          c5cda73a-33d8-8a19-d5d3-1b17dc8c2837
+	  6         sda          8e27898d-13ad-b9ee-8715-30fee1769c99
+	  7         sdc          5dca5d06-6ff7-ffe9-f703-30186440c9b2
+	  
+ * Used dev size: 7813774336 512-byte sectors == 3906887168 kibibytes
+ * data offset: 262144 sectors
+ * Super Offset: 8 sectors
+ * Chunk size: 512K (default)
+ * Raid6, superblock version 1.2
+ * rebuild command,
+
+        mdadm --create --assume-clean --level=6 --size=3906887168 --raid-devices=8 /dev/md0 /dev/sd[dighfbac]
+
+ * No dice.
+ * Perhaps the order was incorrect when I started rebuilding previously
+ * Let's try permuting the array with
+   <https://raid.wiki.kernel.org/index.php/Permute_array.pl> (with
+   some small modifications),
+
+        perl permute_array.pl --md /dev/md0 --mount /mnt/backup /dev/sd[dighfbac]
+
+ * Unfortunately the machine went down at 16:37. Last output,
+
+        trying /dev/sdc missing /dev/sdb /dev/sdi /dev/sdf /dev/sdd /dev/sdg /dev/sdh
+		trying /dev/sdc missing /dev/sdb /dev/sdi /dev/sdf /dev/sdd /dev/sdh /dev/sdg
+		trying /dev/sdc missing /dev/sdb /dev/sdi /dev/sdf /dev/sdg /dev/sdd /dev/sdh
+		trying /dev/sdc missing /dev/sdb /dev/sdi /dev/sdf /dev/sdg /dev/sdh /dev/sdd
+		trying /dev/sdc missing /dev/sdb /dev/sdi /dev/sdf /dev/sdh /dev/sdd /dev/sdg
+
+
+
 ## 2015-02-27
 
  * Joe noticed that sdg, sdh, and sdi had fallen out of sync
