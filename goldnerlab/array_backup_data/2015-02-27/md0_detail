@@ -1,0 +1,37 @@
+/dev/md0:
+        Version : 1.2
+  Creation Time : Thu Oct 24 21:42:06 2013
+     Raid Level : raid6
+     Array Size : 11720291328 (11177.34 GiB 12001.58 GB)
+  Used Dev Size : 1953381888 (1862.89 GiB 2000.26 GB)
+   Raid Devices : 8
+  Total Devices : 9
+    Persistence : Superblock is persistent
+
+  Intent Bitmap : Internal
+
+    Update Time : Fri Feb 27 22:11:25 2015
+          State : clean 
+ Active Devices : 8
+Working Devices : 9
+ Failed Devices : 0
+  Spare Devices : 1
+
+         Layout : left-symmetric
+     Chunk Size : 512K
+
+           Name : goldnerlab:0  (local to host goldnerlab)
+           UUID : b6999fb6:b4ec4a2d:8fcc08f3:0d0aab65
+         Events : 4968
+
+    Number   Major   Minor   RaidDevice State
+       0       8       65        0      active sync   /dev/sde1
+       1       8       81        1      active sync   /dev/sdf1
+       2       8       97        2      active sync   /dev/sdg1
+       3       8      113        3      active sync   /dev/sdh1
+       4       8        1        4      active sync   /dev/sda1
+       5       8       17        5      active sync   /dev/sdb1
+       6       8       33        6      active sync   /dev/sdc1
+       7       8       49        7      active sync   /dev/sdd1
+
+       8       8      241        -      spare   /dev/sdp1

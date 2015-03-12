@@ -1,0 +1,111 @@
+
+/dev/sdf:
+
+ Model=SAMSUNG HD204UI, FwRev=1AQ10001, SerialNo=S2H7J1BZB14648
+ Config={ Fixed }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=4
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=16, MultSect=off
+ CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=3907029168
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio1 pio2 pio3 pio4 
+ DMA modes:  mdma0 mdma1 mdma2 
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 *udma5 udma6 
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: unknown:  ATA/ATAPI-0,1,2,3,4,5,6,7
+
+ * signifies the current active mode
+
+
+ATA device, with non-removable media
+	Model Number:       SAMSUNG HD204UI                         
+	Serial Number:      S2H7J1BZB14648      
+	Firmware Revision:  1AQ10001
+	Transport:          Serial, ATA8-AST, SATA 1.0a, SATA II Extensions, SATA Rev 2.5, SATA Rev 2.6
+Standards:
+	Used: unknown (minor revision code 0x0028) 
+	Supported: 8 7 6 5 
+	Likely used: 8
+Configuration:
+	Logical		max	current
+	cylinders	16383	16383
+	heads		16	16
+	sectors/track	63	63
+	--
+	CHS current addressable sectors:   16514064
+	LBA    user addressable sectors:  268435455
+	LBA48  user addressable sectors: 3907029168
+	Logical  Sector size:                   512 bytes
+	Physical Sector size:                   512 bytes
+	device size with M = 1024*1024:     1907729 MBytes
+	device size with M = 1000*1000:     2000398 MBytes (2000 GB)
+	cache/buffer size  = unknown
+	Form Factor: 3.5 inch
+	Nominal Media Rotation Rate: 5400
+Capabilities:
+	LBA, IORDY(can be disabled)
+	Queue depth: 32
+	Standby timer values: spec'd by Standard, no device specific minimum
+	R/W multiple sector transfer: Max = 16	Current = ?
+	Advanced power management level: 254
+	Recommended acoustic management value: 254, current value: 0
+	DMA: mdma0 mdma1 mdma2 udma0 udma1 udma2 udma3 udma4 *udma5 udma6 
+	     Cycle time: min=120ns recommended=120ns
+	PIO: pio0 pio1 pio2 pio3 pio4 
+	     Cycle time: no flow control=120ns  IORDY flow control=120ns
+Commands/features:
+	Enabled	Supported:
+	   *	SMART feature set
+	    	Security Mode feature set
+	   *	Power Management feature set
+	   *	Write cache
+	   *	Look-ahead
+	   *	Host Protected Area feature set
+	   *	WRITE_BUFFER command
+	   *	READ_BUFFER command
+	   *	NOP cmd
+	   *	DOWNLOAD_MICROCODE
+	   *	Advanced Power Management feature set
+	    	Power-Up In Standby feature set
+	   *	SET_FEATURES required to spinup after power up
+	    	SET_MAX security extension
+	    	Automatic Acoustic Management feature set
+	   *	48-bit Address feature set
+	   *	Device Configuration Overlay feature set
+	   *	Mandatory FLUSH_CACHE
+	   *	FLUSH_CACHE_EXT
+	   *	SMART error logging
+	   *	SMART self-test
+	   *	General Purpose Logging feature set
+	   *	64-bit World wide name
+	   *	WRITE_UNCORRECTABLE_EXT command
+	   *	{READ,WRITE}_DMA_EXT_GPL commands
+	   *	Segmented DOWNLOAD_MICROCODE
+	   *	Gen1 signaling speed (1.5Gb/s)
+	   *	Gen2 signaling speed (3.0Gb/s)
+	   *	Native Command Queueing (NCQ)
+	   *	Host-initiated interface power management
+	   *	Phy event counters
+	   *	NCQ priority information
+	    	DMA Setup Auto-Activate optimization
+	    	Device-initiated interface power management
+	   *	Software settings preservation
+	   *	SMART Command Transport (SCT) feature set
+	   *	SCT Read/Write Long (AC1), obsolete
+	   *	SCT Write Same (AC2)
+	   *	SCT Error Recovery Control (AC3)
+	   *	SCT Features Control (AC4)
+	   *	SCT Data Tables (AC5)
+Security: 
+	Master password revision code = 65534
+		supported
+	not	enabled
+	not	locked
+	not	frozen
+	not	expired: security count
+		supported: enhanced erase
+	320min for SECURITY ERASE UNIT. 320min for ENHANCED SECURITY ERASE UNIT. 
+Logical Unit WWN Device Identifier: 50024e90045279bb
+	NAA		: 5
+	IEEE OUI	: 0024e9
+	Unique ID	: 0045279bb
+Checksum: correct
