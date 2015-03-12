@@ -1,5 +1,14 @@
 # goldner-backup
 
+## 2015-03-12: Array recovery
+
+ * looking back at log from last boot there is no indication of the cause of the hang
+ * Looked back at logs to determine initial device mapping
+ * Tried rebuilding using this order
+ * Partition table backup was corrupted, primary okay
+ * File system superblock corrupted
+ * Declared DOA
+
 ## 2015-03-10: Array recovery
 
  * Joe and I looked at the array issue last week and determined that
