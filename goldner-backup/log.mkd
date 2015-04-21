@@ -1,5 +1,9 @@
 # goldner-backup
 
+## 2015-04-21: Rebuild
+
+ * Joe reinstalled Ubuntu and installed new drives, preserving the old drives for posterity.
+
 ## 2015-03-12: Array recovery
 
  * looking back at log from last boot there is no indication of the cause of the hang
