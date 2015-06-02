@@ -5,6 +5,7 @@
  * The new bup directory on goldnerlab-backup is called /backup/bup.
  * remember that the .sh file that runs on goldnerlab is called /home/bup/backup-array.sh
  * To start backups (on goldnerlab) sudo -u bup /home/bup/backup-array-sh
+ * Instructions for configuring goldner-backup and goldnerlab for backups start in LSG notebook XXV page 63.
 
 ## 2015-04-21: Rebuild
 
