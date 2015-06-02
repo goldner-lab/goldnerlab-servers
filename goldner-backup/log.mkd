@@ -1,5 +1,11 @@
 # goldner-backup
 
+## 2015-06-02:  Lori and Joe attempt to restart backups with some help from Ben.
+
+ * The new bup directory on goldnerlab-backup is called /backup/bup.
+ * remember that the .sh file that runs on goldnerlab is called /home/bup/backup-array.sh
+ * To start backups (on goldnerlab) sudo -u bup /home/bup/backup-array-sh
+
 ## 2015-04-21: Rebuild
 
  * Joe reinstalled Ubuntu and installed new drives, preserving the old drives for posterity.
