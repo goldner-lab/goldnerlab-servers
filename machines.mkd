@@ -15,6 +15,5 @@ Goldnerlab\_FCS 00:22:68:34:6b:73    Hasbrouck 316     FCS Windows box         1
 
 blinky          00:22:68:43:bd:27    Hasbrouck 205     Lori's Linux box        128.119.56.234
 moody           00:1e:c9:58:e4:11    Hasbrouck 205     Peker's desktop         128.119.56.247
-rostam          00:24:1d:ae:40:37    Hasbrouck 205     Sheema's desktop        unknown
-nina-desktop    00:24:1d:ae:38:a2    Hasbrouck 205     Nina's desktop          128.119.56.95
-
+pericles        00:24:1d:ae:40:37    Hasbrouck 205     Sheema's desktop        128.119.56.94
+leonidas        00:24:1d:ae:38:a2    Hasbrouck 205     Nina's desktop          128.119.56.95
