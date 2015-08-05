@@ -2,9 +2,9 @@
 
 Hostname        MAC                  Location          Description             IP Address
 ============    ==================   ===============   ===================     ================
-goldner-backup  bc:5f:f4:c7:c9:dc    LGRT 926          Backup and storage      128.119.56.147
-goldnerlab      00:24:8c:f7:65:2c    LGRT ???          Primary group server    128.119.56.93
-goggle          50:46:5d:6f:4d:5a    LGRT ???          New compute server      128.119.56.205
+goldner-backup  bc:5f:f4:c7:c9:dc    LGRT 927          Backup and storage      128.119.56.147
+goldnerlab      00:24:8c:f7:65:2c    LGRT 927          Primary group server    128.119.56.93
+goggle          50:46:5d:6f:4d:5a    LGRT 927          New compute server      128.119.56.205
 
 magoo           00:1e:c9:58:d8:10    Hasbrouck 314     Windows workstation     128.119.56.248
 goldnerlj2015   80:c1:6e:93:56:bf    Hasbrouck 314     Lab printer             128.119.56.250
