@@ -3,8 +3,9 @@
 Hostname        MAC                  Location          Description             IP Address
 ============    ==================   ===============   ===================     ================
 goldner-backup  bc:5f:f4:c7:c9:dc    LGRT 926          Backup and storage      128.119.56.147
-goldnerlab      00:24:8c:f7:65:2c    Hasbrouck 314     Primary group server    128.119.56.93
-goggle          50:46:5d:6f:4d:5a    Hasbrouck 314     New compute server      128.119.56.205
+goldnerlab      00:24:8c:f7:65:2c    LGRT ???          Primary group server    128.119.56.93
+goggle          50:46:5d:6f:4d:5a    LGRT ???          New compute server      128.119.56.205
+
 magoo           00:1e:c9:58:d8:10    Hasbrouck 314     Windows workstation     128.119.56.248
 goldnerlj2015   80:c1:6e:93:56:bf    Hasbrouck 314     Lab printer             128.119.56.250
 shelob          00:21:86:2e:2b:d9    Hasbrouck 314     Fluorimeter workstation 128.119.56.225
@@ -13,7 +14,10 @@ chimera         b8:ac:6f:7e:e9:b3    Hasbrouck 316     FRET/tracking setup     1
 tkfcs           70:71:bc:b0:cb:bb    Hasbrouck 316     Thorlabs FCS setup      dynamic
 Goldnerlab\_FCS 00:22:68:34:6b:73    Hasbrouck 316     FCS Windows box         128.119.56.112
 
-blinky          00:22:68:43:bd:27    Hasbrouck 205     Lori's Linux box        128.119.56.234
 moody           00:1e:c9:58:e4:11    Hasbrouck 205     Peker's desktop         128.119.56.247
 pericles        00:24:1d:ae:40:37    Hasbrouck 205     Sheema's desktop        128.119.56.94
 leonidas        00:24:1d:ae:38:a2    Hasbrouck 205     Nina's desktop          128.119.56.95
+
+troglobite      00:22:68:5D:CE:2B    Hasbrouck 209     TIRF setup              128.119.56.226
+
+blinky          00:22:68:43:bd:27    Hasbrouck 407A    Lori's Linux box        128.119.56.234
