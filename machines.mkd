@@ -11,7 +11,7 @@ goldnerlj2015   80:c1:6e:93:56:bf    Hasbrouck 314     Lab printer             1
 shelob          00:21:86:2e:2b:d9    Hasbrouck 314     Fluorimeter workstation 128.119.56.225
 
 chimera         b8:ac:6f:7e:e9:b3    Hasbrouck 316     FRET/tracking setup     128.119.56.146
-tkfcs           70:71:bc:b0:cb:bb    Hasbrouck 316     Thorlabs FCS setup      dynamic
+barnowl         70:71:bc:b0:cb:bb    Hasbrouck 316     Thorlabs FCS setup      128.119.56.201
 Goldnerlab\_FCS 00:22:68:34:6b:73    Hasbrouck 316     FCS Windows box         128.119.56.112
 
 moody           00:1e:c9:58:e4:11    Hasbrouck 205     Peker's desktop         128.119.56.247
